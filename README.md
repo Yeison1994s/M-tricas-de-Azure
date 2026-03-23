@@ -1,14 +1,15 @@
-📊 Azure DevOps Webhook Metrics API
+# Azure DevOps Webhook Metrics API
 
 API desarrollada en Python (FastAPI) para recibir eventos (webhooks) de Azure DevOps, procesarlos y almacenarlos en una base de datos PostgreSQL (Neon) para su análisis posterior.
 
-🚀 Arquitectura
+# Arquitectura
 FastAPI → API REST para recibir webhooks
 Azure DevOps → Fuente de eventos (Pull Requests, etc.)
 ngrok → Exposición pública del servidor local
 Neon (PostgreSQL Serverless) → Almacenamiento de datos
 uvicorn → Servidor ASGI
-⚙️ Flujo de funcionamiento
+
+# Flujo de funcionamiento
 Azure DevOps envía eventos (webhooks)
 ngrok expone el endpoint local
 FastAPI recibe la solicitud
@@ -23,7 +24,8 @@ python3 -m venv venv
 source venv/bin/activate
 3. Instalar dependencias
 pip install -r requirements.txt
-🔐 Configuración
+
+# Configuración
 Variables de entorno
 
 Configura la conexión a Neon:
@@ -33,13 +35,13 @@ export DATABASE_URL="postgresql://USER:PASSWORD@HOST/DBNAME?sslmode=require"
 Ejemplo real de Neon:
 
 postgresql://user:password@ep-xxxxx.us-east-1.aws.neon.tech/dbname?sslmode=require
-▶️ Ejecución del proyecto
+Ejecución del proyecto
 uvicorn app:app --host 0.0.0.0 --port 8002
 
 Accede en:
 
 http://localhost:8002
-🌐 Exponer con ngrok
+Exponer con ngrok
 
 Para recibir webhooks desde Azure DevOps:
 
@@ -60,7 +62,8 @@ Configurar:
 Evento: Pull Request Created (u otros)
 URL: endpoint de ngrok
 Método: POST
-📦 Endpoints principales
+
+# Endpoints principales
 Webhook Azure DevOps
 POST /webhooks/azure-devops
 
@@ -68,7 +71,8 @@ Recibe eventos como:
 
 git.pullrequest.created
 git.pullrequest.updated
-🗄️ Base de datos (Neon PostgreSQL)
+
+# Base de datos (Neon PostgreSQL)
 
 Se almacenan:
 
