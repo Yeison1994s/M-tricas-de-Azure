@@ -87,7 +87,8 @@ Autor
 Fecha de creación
 Tipo de evento
 
-Dashboard Metricas de PR con azure 
+# Ejemplo de dashboard Metricas de PR con azure 
+
 <img width="1758" height="1005" alt="image" src="https://github.com/user-attachments/assets/b860fb5b-9599-4ef2-a616-21e074fe6e14" />
 
 Conexion a la base de datos
